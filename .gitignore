@@ -1,0 +1,8 @@
+*.exe
+*.o
+*.out
+*.zip
+*.class
+*.stackdump
+*.pdf
+*.doc
