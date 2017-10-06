@@ -1,6 +1,10 @@
+/******************
+ * Nicolas Mitchell
+ * Implementation of Binary Tree
+ * ***************/
+
+
 #include <iostream>
-#include <cstdlib>
-#include <time.h>
 using namespace std;
 struct node{
     int data;
@@ -58,6 +62,8 @@ void printNodes(struct node* root){
         if (root->right != NULL){
             printNodes(root->right);
         }
+    } else {
+        throw root;
     }
 }
 
@@ -65,15 +71,15 @@ int size(struct node* n) {
     if (n == NULL) {
         return 0;
     }
-    int sum = 1;   
-    sum += size(n->left) + size(n->right);
+    int tree_size = 1;   
+    tree_size += size(n->left) + size(n->right);
     // if (n->left != NULL) {
     //     sum += size(n->left);
     // }
     // if (n->right != NULL) {
     //     sum += size(n->right);
     // }
-    return sum;
+    return tree_size;
 }
 
 int maxDepth(struct node* n) {
@@ -118,26 +124,26 @@ void printPostOrder(struct node* n) {
 }
 
 
-int main() {
-    struct node* node0 = newNode(62);
-    struct node* node1 = newNode(8);
-    struct node* node2 = newNode(14);
-    struct node* node3 = newNode(29);
-    struct node* node4 = newNode(3);
-    struct node* node5 = newNode(77);
-    struct node* node6 = newNode(53);
-    struct node* node7 = newNode(64);
-    insert(node0,node1);
-    insert(node0,node2);
-    insert(node0,node3);
-    insert(node0,node4);
-    insert(node0,node5);
-    insert(node0,node6);
-    insert(node0,node7);
-    printNodes(node0);
-    cout << "Number of nodes: " << size(node0) << endl;
-    cout << "Depth: " << maxDepth(node0) << endl;
-    cout << "Minimum value: " << minValue(node0) << "\tMaximum Value: " << maxValue(node0) << endl;
-    cout << "Postorder: " << endl;
-    printPostOrder(node0);
-}
+//int main() {
+//     struct node* node0 = newNode(62);
+//     struct node* node1 = newNode(8);
+//     struct node* node2 = newNode(14);
+//     struct node* node3 = newNode(29);
+//     struct node* node4 = newNode(3);
+//     struct node* node5 = newNode(77);
+//     struct node* node6 = newNode(53);
+//     struct node* node7 = newNode(64);
+//     insert(node0,node1);
+//     insert(node0,node2);
+//     insert(node0,node3);
+//     insert(node0,node4);
+//     insert(node0,node5);
+//     insert(node0,node6);
+//     insert(node0,node7);
+//     printNodes(node0);
+//     cout << "Number of nodes: " << size(node0) << endl;
+//     cout << "Depth: " << maxDepth(node0) << endl;
+//     cout << "Minimum value: " << minValue(node0) << "\tMaximum Value: " << maxValue(node0) << endl;
+//     cout << "Postorder: " << endl;
+//     printPostOrder(node0);
+// }
